@@ -3,9 +3,19 @@
 	"root": false,
 	"extends": "//",
 	"files": {
-		"includes": [
-			"**",
-			"!**/routeTree.gen.ts"
-		]
+		"includes": ["**", "!**/routeTree.gen.ts"]
+	},
+	"css": {
+		"parser": {
+			"tailwindDirectives": true
+		}
+	},
+	"linter": {
+		"rules": {
+			"a11y": {
+				"noSvgWithoutTitle": "off",
+				"noStaticElementInteractions": "off"
+			}
+		}
 	}
 }
