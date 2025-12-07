@@ -1,7 +1,7 @@
-import { integer, jsonb, pgTable, text, timestamp } from "drizzle-orm/pg-core";
-import { uuidv7 } from "uuidv7";
+import { integer, jsonb, pgTable, text, timestamp } from 'drizzle-orm/pg-core'
+import { uuidv7 } from 'uuidv7'
 
-export const webhooks = pgTable("webhooks", {
+export const webhooks = pgTable('webhooks', {
 	id: text().primaryKey().default(uuidv7()),
 	method: text().notNull(),
 	pathname: text().notNull(),
@@ -17,4 +17,4 @@ export const webhooks = pgTable("webhooks", {
 	updatedAt: timestamp({ withTimezone: true })
 		.notNull()
 		.$onUpdate(() => new Date()),
-});
+})
